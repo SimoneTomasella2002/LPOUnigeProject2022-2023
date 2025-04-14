@@ -1,4 +1,3 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11180703&assignment_repo_type=AssignmentRepo)
 # Progetto finale LPO a.a. 2023-'23
 Il progetto finale consiste nell'implementazione di un'estensione del linguaggio sviluppato durante gli ultimi laboratori Java;
 può quindi essere usata come base di partenza la soluzione proposta per l'ultimo laboratorio.
@@ -13,8 +12,6 @@ typechecker
 ## Definizione del linguaggio
 
 ### Sintassi
-Il linguaggio contiene le nuove parole chiave `foreach` e `in` e i nuovi simboli `[` e `]`.
-
 La sintassi del linguaggio è definita da questa grammatica in forma EBNF:
 
 ```
@@ -29,11 +26,6 @@ Add ::= Mul ('+' Mul)*
 Mul::= Atom ('*' Atom)*
 Atom ::= 'fst' Atom | 'snd' Atom | '-' Atom | '!' Atom | BOOL | NUM | IDENT | '(' Exp ')' | '[' Exp ';' Exp ']' 
 ```
-La grammatica **non** richiede trasformazioni e può essere utilizzata così com'è per sviluppare un parser per il linguaggio con un solo token di lookahead.
-
-Rispetto al linguaggio del laboratorio, sono stati aggiunti
-- il literal di tipo vector  `'[' Exp ';' Exp ']'`
-- lo statement `'foreach' IDENT 'in' Exp Block`
 
 ### Semantica statica
 
@@ -106,13 +98,3 @@ stampa
 * `tests/failure/static-semantics`: test con errori statici **senza** l'opzione `-ntc` ed errori dinamici **con** l'opzione `-ntc`
 * `tests/failure/static-semantics-only`: test con errori statici **senza** l'opzione `-ntc` e corretti con l'opzione `-ntc`
 * `tests/failure/dynamic-semantics`: test che generano errori dinamici **con** o **senza** l'opzione `-ntc`
-
-## Modalità di consegna
-
-- La consegna è valida solo se il **progetto passa tutti i test** contenuti nel folder `tests`; la valutazione del progetto tiene conto dell'esecuzione di test aggiuntivi e della qualità del codice
-- Le scadenze dei turni di consegna coincidono con le date delle prove scritte; dopo ogni scadenza, vengono corretti tutti i progetti consegnati e pubblicati i relativi risultati prima che le consegne siano riaperte. **Dopo la data dell'ultima prova scritta dell'appello invernale non è più possibile consegnare progetti validi per l'anno accademico in corso**
-- Il progetto può essere consegnato anche se l'esame scritto non è stato ancora superato
-- Dopo il commit (e push) finale del progetto su GitHub, la consegna va segnalata da **un singolo componente del gruppo** utilizzando [AulaWeb](https://2022.aulaweb.unige.it/mod/assign/view.php?id=51610) e indicando **il numero del gruppo** definito nell'[elenco su AulaWeb](https://2022.aulaweb.unige.it/mod/wiki/view.php?id=51608)
-- Per ricevere supporto durante lo sviluppo del progetto è consigliabile tenere sempre aggiornato il codice del progetto sul repository GitHub  
-- Dopo che il progetto è stato valutato positivamente, il relativo colloquio **individuale** può essere sostenuto  anche se l'esame scritto non è stato ancora superato; esso ha lo scopo di verificare che ogni componente del gruppo abbia compreso il funzionamento del codice e abbia contribuito attivamente al suo sviluppo
-- Per ulteriori informazioni consultare la [pagina AulaWeb sulle modalità di esame](https://2022.aulaweb.unige.it/mod/page/view.php?id=51601)
