@@ -1,0 +1,35 @@
+You have three methods to compile the program:
+
+--------------------------------------------------------------
+
+Method 1:
+
+    I have prepared a bash script called "startTest.sh" to execute all the tests using a single program.
+
+    To use it, simply type "./startTest.sh" in the terminal.
+
+    You may need to grant execute permissions to the file.
+
+    To enhance the output, I have used a built-in program called "tput" that provides color and bold properties to terminal texts.
+
+    If it doesn't work, you can try the second or third method.
+
+--------------------------------------------------------------
+
+Method 2:
+
+    To compile: javac Progetto_Gruppo_33/*.java -d Progetto_Gruppo_33/.class/
+
+    To run: java -cp Progetto_Gruppo_33/.class/ Progetto_Gruppo_33.Main -ntc -i <filename> -o <filename>
+
+    You can also run it in the terminal without the options -ntc, -i, -o.
+
+--------------------------------------------------------------
+
+Method 3:
+
+    Optionally, you can also compile it with: javac Progetto_Gruppo_33/Main.java.
+
+    However, doing so will generate .class files all over the place. By using the second method, the compiler places the .class files in a single clean directory.
+
+    If you use the second method, run it with: java Progetto_Gruppo_33/Main
